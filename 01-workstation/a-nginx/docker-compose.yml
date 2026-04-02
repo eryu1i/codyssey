@@ -1,0 +1,12 @@
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "${APP_PORT}:80"
+    volumes:
+      - ./app:/usr/share/nginx/html
+    environment:
+      - APP_ENV=production
+
+  redis:
+    image: redis:alpine
